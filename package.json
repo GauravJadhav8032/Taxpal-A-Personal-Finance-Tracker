@@ -1,0 +1,12 @@
+{
+  "name": "taxpal-finance-tracker",
+  "version": "1.0.0",
+  "description": "A Personal Finance Tracker Application",
+  "scripts": {
+    "install-all": "npm install && cd server && npm install",
+    "build": "cd server && npm run build",
+    "start": "cd server && npm start"
+  },
+  "author": "",
+  "license": "ISC"
+}
