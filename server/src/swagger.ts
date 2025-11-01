@@ -19,8 +19,8 @@ const options: swaggerJSDoc.Options = {
             : "http://localhost:5000/api/v1",
         description:
           process.env.NODE_ENV === "production"
-            ? "Render production server"
-            : "Local development server",
+            ? "Production server"
+            : "Development server",
       },
     ],
     components: {
