@@ -118,6 +118,63 @@ router.use(authenticateToken);
  *       200:
  *         description: All transactions deleted successfully
  */
+/**
+ * @swagger
+ * /api/v1/transactions:
+ *   get:
+ *     summary: Get all transactions
+ *     tags: [Transactions]
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       200:
+ *         description: List of all transactions
+ *   post:
+ *     summary: Create a new transaction
+ *     tags: [Transactions]
+ *     security:
+ *       - bearerAuth: []
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               amount:
+ *                 type: number
+ *                 example: 500
+ *               category:
+ *                 type: string
+ *                 example: Food
+ *               type:
+ *                 type: string
+ *                 enum: [income, expense]
+ *                 example: expense
+ *     responses:
+ *       201:
+ *         description: Transaction created successfully
+ */
+
+/**
+ * @swagger
+ * /api/v1/transactions/{id}:
+ *   get:
+ *     summary: Get transaction by ID
+ *     tags: [Transactions]
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: Transaction details
+ */
+
 
 router.get("/", getTransactions);
 router.get("/:id", getTransactionById);
